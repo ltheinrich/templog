@@ -44,7 +44,7 @@ fn main() {
         .create(true)
         .append(true)
         .open(log_path)
-        .expect(&format!("Could not open or create log file '{}'", log_path));
+        .unwrap_or_else(|_| panic!("Could not open or create log file '{}'", log_path));
 
     if cmd.option("graph") || cmd.arguments().contains(&"graph") {
         println!(
@@ -82,13 +82,14 @@ fn get_time() -> u128 {
 }
 
 fn get_temperature(path: &str) -> f64 {
-    let mut file = File::open(path).expect(&format!("Could not open temperature file '{}'", path));
+    let mut file =
+        File::open(path).unwrap_or_else(|_| panic!("Could not open temperature file '{}'", path));
     let mut buf = String::with_capacity(6);
     file.read_to_string(&mut buf)
         .expect("Failed to read temperature file");
     let temp_int: i32 = buf
         .strip_suffix('\n')
-        .unwrap_or_else(|| &buf)
+        .unwrap_or(&buf)
         .parse()
         .expect("Temperature is not a 32-bit integer");
     temp_int as f64 / 1000.0

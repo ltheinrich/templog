@@ -6,7 +6,8 @@ use std::fs::File;
 use std::io::prelude::Read;
 
 pub fn parse_log(path: &str) -> Vec<(f64, f64)> {
-    let mut file = File::open(path).expect(&format!("Could not open log file '{}'", path));
+    let mut file =
+        File::open(path).unwrap_or_else(|_| panic!("Could not open log file '{}'", path));
     let mut buf = String::with_capacity(
         file.metadata()
             .expect("Log file has no metadata?")
