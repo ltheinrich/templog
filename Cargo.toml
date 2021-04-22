@@ -1,11 +1,11 @@
 [package]
 name = "templog"
 version = "0.1.0"
-authors = ["Lennart <lennart@ltheinrich.de>"]
+authors = ["Lennart Heinrich <lennart@ltheinrich.de>"]
 edition = "2018"
 license = "ISC"
 repository = "https://ltheinrich.de/templog"
-description = "CPU temperature logger"
+description = "CPU temperature logger and plotter"
 
 [dependencies]
 kern = "1.3.0"

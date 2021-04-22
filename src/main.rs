@@ -9,7 +9,7 @@ use std::io::prelude::{Read, Write};
 use std::thread::sleep;
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
-static CARGO_TOML: &'static str = include_str!("../Cargo.toml");
+static CARGO_TOML: &str = include_str!("../Cargo.toml");
 
 fn main() {
     println!(
