@@ -69,7 +69,7 @@ fn main() {
         let writer = buf_writer(log_file, buf_len);
         loop {
             writer
-                .send(get_temperature(&temp_path))
+                .send(get_temperature(temp_path))
                 .expect("Buffered writer channel (sender) crashed");
             sleep(Duration::from_millis(interval));
         }
