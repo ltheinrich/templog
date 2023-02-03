@@ -52,19 +52,15 @@ fn main() {
         .unwrap_or_else(|_| panic!("Could not open or create log file '{}'", log_path));
 
     if cmd.option("graph") || cmd.parameters().contains_key(&"graph") {
-        println!(
-            "Creating graph from log file '{}' averaging every {} entrie(s) ...",
-            log_path, avg
-        );
+        println!("Creating graph from log file '{log_path}' averaging every {avg} entrie(s) ...");
         let mut log = parse_log(log_path);
         sort(&mut log);
         let averaged = average(&log, avg);
         plot(averaged, graph_path);
-        println!("Created graph '{}'", graph_path);
+        println!("Created graph '{graph_path}'");
     } else {
         println!(
-            "Logging to file '{}' every {} ms from temperature file '{}' ...",
-            log_path, interval, temp_path
+            "Logging to file '{log_path}' every {interval} ms from temperature file '{temp_path}' ..."
         );
         let writer = buf_writer(log_file, buf_len);
         loop {
