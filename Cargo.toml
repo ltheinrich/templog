@@ -8,7 +8,7 @@ repository = "https://ltheinrich.de/templog"
 description = "CPU temperature logger and plotter"
 
 [dependencies]
-kern = "1.6.0"
+kern = "1.6.1"
 plotlib = "0.5.1"
 
 [profile.release]
