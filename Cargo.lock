@@ -74,9 +74,9 @@ checksum = "4271d37baee1b8c7e4b708028c57d816cf9d2434acb33a549475f78c181f6253"
 
 [[package]]
 name = "kern"
-version = "1.7.0"
+version = "1.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "465ac13af7bec0abbaa6c262509852a7e8d9045f11ba2c5db02e104e6b32411c"
+checksum = "d264d60bc333b796813e95321a90e1b3c269aa94b8d8bff2a7dbe54d1663a85c"
 
 [[package]]
 name = "libc"
