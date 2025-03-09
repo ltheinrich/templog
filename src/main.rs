@@ -1,12 +1,12 @@
 mod plotter;
 
-use kern::meta::{init_name, init_version};
 use kern::CliBuilder;
+use kern::meta::{init_name, init_version};
 use plotter::{average, parse_log, plot, sort};
 use std::env;
 use std::fs::{File, OpenOptions};
 use std::io::prelude::{Read, Write};
-use std::sync::mpsc::{channel, Receiver, Sender};
+use std::sync::mpsc::{Receiver, Sender, channel};
 use std::thread::{sleep, spawn};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
