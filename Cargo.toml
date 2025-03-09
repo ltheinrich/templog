@@ -8,8 +8,8 @@ repository = "https://ltheinrich.de/templog"
 description = "CPU temperature logger and plotter"
 
 [dependencies]
-kern = "1.8.0"
-plotlib = "0.5.1"
+kern = "1.8.2"
+plotlib = { git = "https://github.com/milliams/plotlib", branch = "dependabot/cargo/svg-0.13.0" }
 
 [profile.release]
 lto = "fat"
