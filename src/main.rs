@@ -49,7 +49,7 @@ fn main() {
         .create(true)
         .append(true)
         .open(log_path)
-        .unwrap_or_else(|_| panic!("Could not open or create log file '{}'", log_path));
+        .unwrap_or_else(|_| panic!("Could not open or create log file '{log_path}'"));
 
     if cmd.option("graph") || cmd.parameters().contains_key(&"graph") {
         println!("Creating graph from log file '{log_path}' averaging every {avg} entrie(s) ...");
@@ -81,7 +81,7 @@ fn get_time() -> u128 {
 
 fn get_temperature(path: &str) -> f64 {
     let mut file =
-        File::open(path).unwrap_or_else(|_| panic!("Could not open temperature file '{}'", path));
+        File::open(path).unwrap_or_else(|_| panic!("Could not open temperature file '{path}'"));
     let mut buf = String::with_capacity(6);
     file.read_to_string(&mut buf)
         .expect("Failed to read temperature file");
